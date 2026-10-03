@@ -1,0 +1,36 @@
+name: SYNAPSE HELIOS CD - Production Deployment
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Run Quality Gate Tests
+      run: |
+        pip install -r requirements.txt
+        pytest -v
+
+    - name: Cloudflare Pages Deployment (Static Artifacts)
+      uses: cloudflare/pages-action@v1
+      if: env.CLOUDFLARE_API_TOKEN != ''
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        projectName: 'synapse-helios-id'
+        directory: 'static'
+        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+      env:
+        CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

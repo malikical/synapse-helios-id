@@ -1,0 +1,107 @@
+/* SYNAPSE HELIOS ID - Architectural Cyber Aesthetics */
+
+/* Blueprint crosshair marker */
+.crosshair-corner {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  pointer-events: none;
+  z-index: 20;
+}
+.crosshair-corner::before, .crosshair-corner::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.35);
+}
+.crosshair-corner::before {
+  top: 6px;
+  left: 0;
+  width: 13px;
+  height: 1px;
+}
+.crosshair-corner::after {
+  left: 6px;
+  top: 0;
+  width: 1px;
+  height: 13px;
+}
+
+/* Grid line borders */
+.blueprint-border {
+  border-color: #1e1e1e;
+}
+.blueprint-border-b {
+  border-bottom: 1px solid #1e1e1e;
+}
+.blueprint-border-r {
+  border-right: 1px solid #1e1e1e;
+}
+
+/* Subtle scanline and grain overlay */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Cyber Visor Glow Animations */
+@keyframes visorPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 25px rgba(0, 243, 255, 0.5);
+    opacity: 0.95;
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 45px rgba(0, 243, 255, 0.8);
+    opacity: 1;
+  }
+}
+.cyber-visor {
+  animation: visorPulse 3.5s infinite ease-in-out;
+}
+
+/* Hologram Scan line effect */
+@keyframes scanlineAnim {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+.scanline-effect::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.7), transparent);
+  animation: scanlineAnim 4s linear infinite;
+  pointer-events: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f3ff;
+}
+
+/* Selection */
+::selection {
+  background: #00f3ff;
+  color: #000000;
+}
+
+/* Code card badge transition */
+.lang-card:hover .lang-logo {
+  transform: scale(1.1) rotate(3deg);
+  filter: drop-shadow(0 0 12px rgba(0, 243, 255, 0.5));
+}
+.lang-logo {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}

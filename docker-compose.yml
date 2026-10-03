@@ -1,0 +1,11 @@
+services:
+  synapse-helios-id:
+    build: .
+    container_name: synapse-helios-id
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - HOST=0.0.0.0
+      - PORT=8000
+    restart: unless-stopped

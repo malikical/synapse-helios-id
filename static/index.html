@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYNAPSE HELIOS ID // Klaster Kognisi & Taksonomi Arsitektur Kecerdasan Buatan</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Syne, Space Grotesk, JetBrains Mono, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#050505',
+            surface: '#0c0c0c',
+            card: '#121212',
+            borderSubtle: '#1f1f1f',
+            silver: '#8e8e8e',
+            cyberCyan: '#00f3ff',
+            cyberGlow: 'rgba(0, 243, 255, 0.4)'
+          },
+          fontFamily: {
+            headline: ['"Space Grotesk"', 'sans-serif'],
+            display: ['"Syne"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['"Inter"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="/static/css/custom.css">
+</head>
+<body class="bg-obsidian text-white font-sans antialiased selection:bg-cyan-400 selection:text-black overflow-x-hidden bg-grid-pattern">
+
+  <!-- Status Bar Top Navigation -->
+  <div class="w-full bg-[#080808] border-b border-[#181818] py-1.5 px-4 sm:px-8 text-[11px] font-mono tracking-wider text-silver flex justify-between items-center z-50 relative">
+    <div class="flex items-center gap-3">
+      <span class="inline-flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        <span class="text-white font-bold">STATUS_SISTEM: AKTIF</span>
+      </span>
+      <span class="text-neutral-600">//</span>
+      <span class="text-cyan-400">KLASTER KOGNISI INDONESIA</span>
+      <span class="hidden lg:inline text-neutral-600">//</span>
+      <span class="hidden lg:inline text-neutral-400">LAT: 6.2088° S, LNG: 106.8456° E (JKT)</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <span class="hidden sm:inline text-neutral-400">SINKRONISASI_MEMORI: <span class="text-white">99.98%</span></span>
+      <span class="text-neutral-500">[GEMINI-3-FLASH ENGINE]</span>
+      <span class="text-white font-mono" id="live-time">00:00:00 WIB</span>
+    </div>
+  </div>
+
+  <!-- Primary Architectural Header -->
+  <header class="w-full sticky top-0 z-40 bg-obsidian/90 backdrop-blur-md border-b border-[#1c1c1c]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Architectural Monogram Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 border border-cyan-400/40 group-hover:border-cyan-400 flex items-center justify-center font-display font-bold text-lg tracking-tighter text-cyan-400 transition-all duration-300 shadow-[0_0_10px_rgba(0,243,255,0.2)]">
+          Σ
+        </div>
+        <div class="flex flex-col">
+          <span class="font-headline font-bold text-sm tracking-[0.25em] uppercase text-white group-hover:text-cyan-300 transition-colors">SYNAPSE HELIOS</span>
+          <span class="font-mono text-[9px] text-silver tracking-widest uppercase -mt-0.5">ARSITEKTUR KOGNISI AI // ID</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8 font-mono text-xs text-silver tracking-widest uppercase">
+        <a href="#hero" class="hover:text-white transition-colors">Visi</a>
+        <a href="#taksonomi" class="hover:text-white transition-colors">Taksonomi AI</a>
+        <a href="#bahasa-komputasi" class="hover:text-white transition-colors">Bahasa Komputasi</a>
+        <a href="#terminal-section" class="text-white flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span> Terminal Interaktif
+        </a>
+        <a href="#synergy" class="hover:text-white transition-colors">Sinergi</a>
+        <a href="#model-masa-depan" class="hover:text-white transition-colors">Model Masa Depan</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="flex items-center gap-4">
+        <a href="#terminal-section" class="px-5 py-2 rounded-full border border-cyan-400/50 hover:border-cyan-400 bg-cyan-950/20 hover:bg-cyan-400 hover:text-black font-mono text-xs tracking-wider uppercase text-cyan-300 transition-all duration-300 flex items-center gap-2">
+          <span>Koneksi Terminal</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative">
+
+    <!-- HERO SECTION: Architectural Intelligence -->
+    <section id="hero" class="relative min-h-[92vh] border-b border-[#1c1c1c] overflow-hidden">
+      <!-- Grid crosshairs -->
+      <div class="crosshair-corner top-4 left-4"></div>
+      <div class="crosshair-corner top-4 right-4"></div>
+      <div class="crosshair-corner bottom-4 left-4"></div>
+      <div class="crosshair-corner bottom-4 right-4"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 py-12 lg:py-20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[85vh]">
+        
+        <!-- Left Column: Big Editorial Typography -->
+        <div class="lg:col-span-6 flex flex-col justify-between h-full z-10">
+          <div>
+            <div class="inline-flex items-center gap-2 font-mono text-xs text-silver tracking-widest uppercase mb-6 px-3 py-1 border border-[#222] bg-[#0c0c0c]">
+              <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-ping"></span>
+              REKAYASA ARSITEKTUR KECERDASAN BUATAN
+            </div>
+            
+            <h1 class="font-headline font-bold text-4xl sm:text-6xl xl:text-7xl leading-[0.95] tracking-tight uppercase text-white mb-8">
+              MENGAKSELERASI<br/>
+              <span class="text-cyan-400">KOGNISI,</span><br/>
+              MEMBEDAH<br/>
+              ARSITEKTUR AI
+            </h1>
+
+            <p class="text-silver text-sm sm:text-base leading-relaxed max-w-lg font-sans mb-10">
+              Sepanjang sejarah peradaban, seni dan teknologi selalu menjadi dua poros utama yang mendorong batas nalar manusia. 
+              <strong class="text-white font-semibold">SYNAPSE HELIOS ID</strong> membedah taksonomi, paradigma penalaran mendalam (*reasoning*), sistem agen otonom, hingga akselerasi perangkat keras komputasi AI terkini.
+            </p>
+
+            <!-- Pill CTA Buttons -->
+            <div class="flex flex-wrap items-center gap-4">
+              <a href="#taksonomi" class="group inline-flex items-center gap-3 px-6 py-3 rounded-full border border-cyan-400/60 hover:border-cyan-400 bg-cyan-950/30 hover:bg-cyan-400 text-cyan-300 hover:text-black font-mono text-xs tracking-wider uppercase transition-all duration-300 shadow-[0_0_15px_rgba(0,243,255,0.15)]">
+                <span>Eksplorasi Taksonomi</span>
+                <span class="w-5 h-5 rounded-full bg-cyan-400/20 group-hover:bg-black/20 flex items-center justify-center transition-colors">
+                  <svg class="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </span>
+              </a>
+              <a href="#bahasa-komputasi" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 hover:border-white bg-[#0e0e0e] hover:bg-white text-white hover:text-black font-mono text-xs tracking-wider uppercase transition-all duration-300">
+                <span>Bahasa Komputasi</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bottom Micro Telemetry -->
+          <div class="pt-16 mt-8 flex items-center justify-between border-t border-[#1a1a1a] text-silver font-mono text-xs">
+            <div class="flex items-center gap-4">
+              <!-- Global Nodes Indicator -->
+              <span class="flex items-center gap-1.5 text-neutral-400">
+                <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                <span>JKT-NODE-01</span>
+              </span>
+              <span class="text-neutral-600">//</span>
+              <span class="text-neutral-400">SOTA REASONING READY</span>
+            </div>
+
+            <!-- Scroll Wheel Indicator -->
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] tracking-widest text-neutral-500 uppercase">INDEKS_SISTEM 01</span>
+              <div class="w-5 h-8 rounded-full border border-neutral-700 flex justify-center pt-1.5">
+                <div class="w-1 h-2 rounded-full bg-cyan-400 animate-bounce"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Classical Sculpture with Rayburst Geometric Canvas -->
+        <div class="lg:col-span-6 relative flex items-center justify-center min-h-[460px] sm:min-h-[580px]">
+          
+          <!-- Animated Sunburst / Ray Canvas -->
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <canvas id="rayburst-canvas" class="w-full h-full max-w-[550px] max-h-[550px] opacity-90"></canvas>
+          </div>
+
+          <!-- Hero Classical Sculpture with Cybernetic Visor -->
+          <div class="relative z-10 w-full max-w-[420px] mx-auto group">
+            
+            <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-[#141414] to-black shadow-2xl">
+              <!-- Statue Photo -->
+              <img 
+                src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=80" 
+                alt="Classical Sculpture Atlas AI" 
+                class="w-full h-[480px] object-cover object-top grayscale contrast-125 brightness-90 transition-transform duration-700 group-hover:scale-105"
+                onerror="this.src='https://images.unsplash.com/photo-1544531585-9847b68c8c86?auto=format&fit=crop&w=1000&q=80'"
+              />
+
+              <!-- Glowing Cyber Visor Overlay -->
+              <div class="absolute top-[28%] left-[42%] w-24 h-2.5 bg-cyan-300 rounded-full cyber-visor -rotate-6 backdrop-blur-sm border border-white"></div>
+              
+              <!-- Subtle Cybernetic Data Nodes & Grid Marks -->
+              <div class="absolute top-4 left-4 font-mono text-[9px] text-white/70 bg-black/60 px-2 py-0.5 border border-white/20">
+                [OBJ_KOGNISI::ATLAS_01]
+              </div>
+              <div class="absolute bottom-4 right-4 font-mono text-[9px] text-emerald-400 bg-black/70 px-2 py-0.5 border border-white/20 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
+                MATRIKS AKTIF
+              </div>
+
+              <!-- Celestial Wireframe Globe Circle Ring Overlay -->
+              <div class="absolute top-[12%] right-[16%] w-28 h-28 rounded-full border border-cyan-400/40 pointer-events-none animate-spin" style="animation-duration: 20s;">
+                <div class="absolute inset-1 rounded-full border border-dashed border-white/40"></div>
+              </div>
+            </div>
+
+            <!-- Blueprint crosshairs around statue container -->
+            <div class="crosshair-corner -top-2 -left-2"></div>
+            <div class="crosshair-corner -top-2 -right-2"></div>
+            <div class="crosshair-corner -bottom-2 -left-2"></div>
+            <div class="crosshair-corner -bottom-2 -right-2"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: AI TAXONOMY (Comprehensive Indonesian AI Classification) -->
+    <section id="taksonomi" class="relative border-b border-[#1c1c1c] bg-[#070707] py-20 lg:py-28 px-4 sm:px-8">
+      <div class="crosshair-corner top-4 left-4"></div>
+      <div class="crosshair-corner top-4 right-4"></div>
+
+      <div class="max-w-7xl mx-auto">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 pb-6 border-b border-[#1e1e1e] gap-6">
+          <div>
+            <div class="inline-flex items-center gap-2 font-mono text-xs text-cyan-400 tracking-widest uppercase mb-2">
+              <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-ping"></span>
+              KLASIFIKASI & TAKSONOMI KECERDASAN BUATAN TERKINI
+            </div>
+            <h2 class="font-headline font-bold text-3xl sm:text-5xl uppercase tracking-tight text-white">
+              TAKSONOMI KOGNISI & ARSITEKTUR AI
+            </h2>
+          </div>
+          <div class="font-mono text-xs text-silver max-w-md lg:text-right">
+            KLASIFIKASI MENCAKUP: <span class="text-white">REASONING, OMNI-MODAL, AGENTIC, WORLD MODELS, MoE/SSM, & AGI ROADMAP</span>
+          </div>
+        </div>
+
+        <!-- Filter & Live Search Toolbar -->
+        <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-10">
+          
+          <!-- Category Filter Buttons -->
+          <div class="flex flex-wrap items-center gap-2">
+            <button onclick="filterTaxonomy('all', this)" class="taxonomy-filter-btn px-4 py-2 rounded-full border border-cyan-400 bg-cyan-950/50 text-cyan-300 text-xs font-mono font-bold shadow-[0_0_12px_rgba(0,243,255,0.25)] transition-all">
+              Semua Kategori (6)
+            </button>
+            <button onclick="filterTaxonomy('reasoning-test-time', this)" class="taxonomy-filter-btn px-4 py-2 rounded-full border border-neutral-800 bg-[#0d0d0d] text-silver text-xs font-mono hover:text-white hover:border-neutral-600 transition-all">
+              01 Reasoning CoT
+            </button>
+            <button onclick="filterTaxonomy('omni-modal-frontier', this)" class="taxonomy-filter-btn px-4 py-2 rounded-full border border-neutral-800 bg-[#0d0d0d] text-silver text-xs font-mono hover:text-white hover:border-neutral-600 transition-all">
+              02 Omni-Modal
+            </button>
+            <button onclick="filterTaxonomy('autonomous-agentic', this)" class="taxonomy-filter-btn px-4 py-2 rounded-full border border-neutral-800 bg-[#0d0d0d] text-silver text-xs font-mono hover:text-white hover:border-neutral-600 transition-all">
+              03 Agentic Swarms
+            </button>
+            <button onclick="filterTaxonomy('generative-media-world', this)" class="taxonomy-filter-btn px-4 py-2 rounded-full border border-neutral-800 bg-[#0d0d0d] text-silver text-xs font-mono hover:text-white hover:border-neutral-600 transition-all">
+              04 World Models
+            </button>
+            <button onclick="filterTaxonomy('architectural-foundations', this)" class="taxonomy-filter-btn px-4 py-2 rounded-full border border-neutral-800 bg-[#0d0d0d] text-silver text-xs font-mono hover:text-white hover:border-neutral-600 transition-all">
+              05 MoE vs SSM
+            </button>
+            <button onclick="filterTaxonomy('narrow-ai-to-agi', this)" class="taxonomy-filter-btn px-4 py-2 rounded-full border border-neutral-800 bg-[#0d0d0d] text-silver text-xs font-mono hover:text-white hover:border-neutral-600 transition-all">
+              06 AGI Alignment
+            </button>
+          </div>
+
+          <!-- Search Input -->
+          <div class="relative min-w-[240px]">
+            <input 
+              id="taxonomy-search-input"
+              type="text" 
+              placeholder="Cari model, formula, atau mekanisme..." 
+              oninput="searchTaxonomy()"
+              class="w-full bg-[#111] border border-neutral-800 rounded-full px-4 py-2 text-xs font-mono text-white placeholder-neutral-500 focus:outline-none focus:border-cyan-400 transition-colors"
+            />
+          </div>
+
+        </div>
+
+        <!-- Dynamic Taxonomy Cards Grid -->
+        <div id="taxonomy-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Populated by interactive-matrix.js -->
+          <div class="p-8 border border-neutral-800 rounded-xl bg-[#0a0a0a] text-center font-mono text-xs text-neutral-400">
+            [MEMUAT MATRIKS KOGNISI...]
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: PROGRAMMING LANGUAGES FOR AI -->
+    <section id="bahasa-komputasi" class="relative border-b border-[#1c1c1c] bg-surface py-20 lg:py-28 px-4 sm:px-8">
+      <div class="crosshair-corner top-4 left-4"></div>
+      <div class="crosshair-corner top-4 right-4"></div>
+
+      <div class="max-w-7xl mx-auto">
+        
+        <!-- Header -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-16 pb-6 border-b border-[#1f1f1f] gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 font-mono text-xs text-silver tracking-widest uppercase mb-2">
+              <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+              REKAYASA PERANGKAT LUNAK & KOMPUTASI TENSOR
+            </div>
+            <h2 class="font-headline font-bold text-3xl sm:text-5xl uppercase tracking-tight text-white leading-[0.95]">
+              ARSITEKTUR BAHASA KOMPUTASI AI<br/>
+              <span class="text-cyan-400">& REKAYASA PERANGKAT LUNAK</span>
+            </h2>
+          </div>
+          <div class="font-mono text-xs text-silver lg:text-right max-w-sm">
+            ARSITEKTUR POLIGLOTI: <span class="text-white">PYTHON, TYPESCRIPT, C++/CUDA, RUST, MOJO, GO, & JULIA</span> DENGAN ASSET LOGO RESMI SVG/PNG.
+          </div>
+        </div>
+
+        <!-- Programming Languages Grid -->
+        <div id="languages-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <!-- Populated by interactive-matrix.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: INTERACTIVE COGNITION TERMINAL -->
+    <section id="terminal-section" class="relative border-b border-[#1c1c1c] bg-[#050505] py-20 px-4 sm:px-8">
+      <div class="crosshair-corner top-4 left-4"></div>
+      <div class="crosshair-corner top-4 right-4"></div>
+      
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Terminal Header Title -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-6 border-b border-[#1e1e1e] gap-4">
+          <div>
+            <div class="flex items-center gap-2 font-mono text-xs text-cyan-400 tracking-widest uppercase mb-2">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+              [LIVE TERMINAL INTERAKTIF // KLASTER KOGNISI INDONESIA]
+            </div>
+            <h2 class="font-headline font-bold text-2xl sm:text-4xl uppercase tracking-tight text-white">
+              TERMINAL KOGNISI SYNAPSE
+            </h2>
+          </div>
+          <div class="font-mono text-xs text-silver">
+            LATENSI LANGSUNG: <span class="text-emerald-400 font-bold">~18.4ms</span> // MESIN: <span class="text-white">gemini-3-flash-preview</span>
+          </div>
+        </div>
+
+        <!-- Terminal Chassis UI -->
+        <div class="border border-[#282828] rounded-xl bg-[#0a0a0a] shadow-2xl overflow-hidden relative">
+          
+          <!-- Terminal Window Bar -->
+          <div class="bg-[#141414] px-4 py-3 border-b border-[#222] flex flex-wrap items-center justify-between font-mono text-xs text-silver gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+              <span class="ml-3 text-white tracking-wider font-semibold">synapse-id@klaster-kognisi:~#</span>
+            </div>
+            
+            <!-- Mode Selector Chips in Indonesian -->
+            <div class="flex items-center gap-1.5 sm:gap-2">
+              <button onclick="setTerminalMode('creative')" id="btn-mode-creative" class="px-3 py-1.5 rounded text-[11px] font-mono border border-cyan-400 bg-cyan-950/60 text-cyan-300 font-semibold shadow-[0_0_10px_rgba(0,243,255,0.2)]">
+                Sintesis Kreatif
+              </button>
+              <button onclick="setTerminalMode('code')" id="btn-mode-code" class="px-3 py-1.5 rounded text-[11px] font-mono border border-neutral-800 bg-[#111] text-silver hover:text-white transition-colors">
+                Arsitek Kode
+              </button>
+              <button onclick="setTerminalMode('analysis')" id="btn-mode-analysis" class="px-3 py-1.5 rounded text-[11px] font-mono border border-neutral-800 bg-[#111] text-silver hover:text-white transition-colors">
+                Analisis Mendalam
+              </button>
+            </div>
+          </div>
+
+          <!-- Prompt Preset Chips (Indonesian) -->
+          <div class="px-4 py-3 bg-[#0e0e0e] border-b border-[#1c1c1c] flex flex-wrap items-center gap-2 text-xs font-mono">
+            <span class="text-neutral-500 font-semibold text-[11px]">PRESET KUERI:</span>
+            <button onclick="fillPrompt('Jelaskan mekanisme Test-Time Compute dan Process Reward Models pada OpenAI o1/o3 dan DeepSeek-R1.')" class="px-2.5 py-1 rounded bg-[#181818] hover:bg-[#222] text-silver hover:text-cyan-300 border border-[#2a2a2a] transition-colors">
+              🧠 Test-Time Compute & CoT
+            </button>
+            <button onclick="fillPrompt('Bandingkan efisiensi komputasi dan konsumsi memori KV-Cache antara Dense Transformers, MoE, dan Mamba SSM.')" class="px-2.5 py-1 rounded bg-[#181818] hover:bg-[#222] text-silver hover:text-cyan-300 border border-[#2a2a2a] transition-colors">
+              ⚡ MoE vs Mamba SSM
+            </button>
+            <button onclick="fillPrompt('Tuliskan implementasi PyTorch FlashAttention dan jelaskan integrasi kernel CUDA di lapisan bawah.')" class="px-2.5 py-1 rounded bg-[#181818] hover:bg-[#222] text-silver hover:text-cyan-300 border border-[#2a2a2a] transition-colors">
+              💻 Arsitektur PyTorch / CUDA
+            </button>
+            <button onclick="fillPrompt('Bagaimana arsitektur sistem multi-agen dengan Model Context Protocol (MCP) dan Computer Use bekerja?') " class="px-2.5 py-1 rounded bg-[#181818] hover:bg-[#222] text-silver hover:text-cyan-300 border border-[#2a2a2a] transition-colors">
+              🤖 Multi-Agent & Computer Use
+            </button>
+          </div>
+
+          <!-- Terminal Log / Response Console Area -->
+          <div id="terminal-screen" class="p-5 font-mono text-xs sm:text-sm text-silver min-h-[280px] max-h-[460px] overflow-y-auto space-y-4">
+            <div class="text-neutral-500 leading-relaxed">
+              [BOOT_SISTEM] Menginisialisasi parameter koneksi Klaster Kognisi SYNAPSE HELIOS ID...<br/>
+              [STATUS] Saluran neural terkalibrasi. Siap menerima aliran instruksi.<br/>
+              [INFO] Masukkan pertanyaan taksonomi, arsitektur, atau kode AI pada terminal di bawah.
+            </div>
+            <div id="terminal-history" class="space-y-4"></div>
+            <div id="terminal-loading" class="hidden text-cyan-400 flex items-center gap-2">
+              <span class="animate-spin inline-block w-3.5 h-3.5 border-2 border-cyan-400 border-t-transparent rounded-full"></span>
+              <span>SYNAPSE_CORE: Menghitung tensor kognitif & merekonstruksi nalar...</span>
+            </div>
+          </div>
+
+          <!-- Terminal Input Form -->
+          <form id="terminal-form" onsubmit="handleTerminalSubmit(event)" class="p-3 bg-[#111] border-t border-[#222] flex flex-col sm:flex-row gap-3">
+            <div class="flex-1 relative flex items-center">
+              <span class="absolute left-3 text-cyan-400 font-mono text-sm font-bold">></span>
+              <input 
+                id="terminal-input" 
+                type="text" 
+                placeholder="Tanyakan apa saja seputar taksonomi, arsitektur model, atau kode AI..." 
+                class="w-full bg-[#080808] border border-[#262626] rounded-lg pl-8 pr-4 py-2.5 text-xs sm:text-sm font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-cyan-400 transition-colors"
+                autocomplete="off"
+              />
+            </div>
+            <button 
+              type="submit" 
+              id="terminal-submit-btn" 
+              class="px-6 py-2.5 rounded-lg bg-cyan-400 text-black font-mono text-xs font-bold tracking-wider uppercase hover:bg-cyan-300 transition-all flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,243,255,0.3)]"
+            >
+              <span>Eksekusi ↵</span>
+            </button>
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: SYNERGY & MOIRE HARMONIC CANVAS -->
+    <section id="synergy" class="relative border-b border-[#1c1c1c] bg-surface">
+      <div class="crosshair-corner top-4 left-4"></div>
+      <div class="crosshair-corner top-4 right-4"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 py-20 lg:py-28">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Left Column: Big Headline & Moiré Wave Arc Canvas -->
+          <div class="lg:col-span-6 flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs tracking-widest text-silver uppercase block mb-3">DI SYNAPSE HELIOS ID</span>
+              <h2 class="font-headline font-bold text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-white mb-10 leading-[0.95]">
+                KAMI MEWUJUDKAN<br/>
+                <span class="text-cyan-400">SINERGI</span> ABADI<br/>
+                KOGNISI & SENI
+              </h2>
+            </div>
+
+            <!-- Mathematical Harmonic Moiré Wave Arc Canvas -->
+            <div class="relative w-full h-[260px] sm:h-[320px] rounded-lg border border-[#1f1f1f] bg-black overflow-hidden flex items-center justify-center p-4">
+              <canvas id="moire-arc-canvas" class="w-full h-full"></canvas>
+              <div class="absolute bottom-3 left-4 font-mono text-[10px] text-neutral-500 uppercase tracking-widest">
+                GELOMBANG HARMONIK MOIRÉ // GEO_FORM:02
+              </div>
+              <div class="crosshair-corner top-2 left-2"></div>
+              <div class="crosshair-corner bottom-2 right-2"></div>
+            </div>
+          </div>
+
+          <!-- Right Column: Editorial Columns with Roman Numerals -->
+          <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12 relative pt-2">
+            
+            <!-- Column I -->
+            <div class="border-t sm:border-t-0 sm:border-l border-[#222] sm:pl-8 pt-6 sm:pt-0">
+              <div class="font-mono text-xs font-bold text-cyan-400 mb-4 tracking-widest">I // FONDASI TEORETIS</div>
+              <p class="text-silver text-xs sm:text-sm leading-relaxed mb-6 font-sans">
+                Synapse Helios ID didirikan dari visi menjembatani batas konseptual komputasi kecerdasan tiruan dengan persepsi manusia. 
+                Kami mengintegrasikan fondasi aljabar linier multi-dimensi, teori kontrol otonom, dan arsitektur saraf berskala masif untuk menghadirkan pemahaman yang komprehensif bagi para arsitek perangkat lunak di Indonesia.
+              </p>
+              <div class="font-mono text-[11px] text-neutral-500">
+                REF_ID: 884-AX // ASAL MULA KOGNISI
+              </div>
+            </div>
+
+            <!-- Column II -->
+            <div class="border-t sm:border-t-0 sm:border-l border-[#222] sm:pl-8 pt-6 sm:pt-0">
+              <div class="font-mono text-xs font-bold text-cyan-400 mb-4 tracking-widest">II // EKSPANSI ALGORITMA</div>
+              <p class="text-silver text-xs sm:text-sm leading-relaxed mb-6 font-sans">
+                Lintasan riset kami mencerminkan evolusi dari model generatif klasik menuju model penalaran (Reasoning Models) dan simulasi spasial dunia nyata (World Models). 
+                Komitmen kami adalah mengeksplorasi batas efisiensi energi komputasi, keandalan inferensi, dan penyelarasan etika kecerdasan buatan (*AI Alignment*).
+              </p>
+              <div class="font-mono text-[11px] text-neutral-500">
+                REF_ID: 902-BX // TRANSFORMASI
+              </div>
+            </div>
+
+            <!-- Column IV (Bottom Section) -->
+            <div class="sm:col-span-2 border-t border-[#222] pt-6 flex justify-between items-center text-xs font-mono text-neutral-500">
+              <span class="tracking-widest uppercase text-cyan-400">IV // KONTINUITAS SINAPTIK</span>
+              <span class="text-white">STATUS: OPERASIONAL 24/7 (INDONESIA)</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: SPIROGRAPH CYCLOID SPHERE & CANVAS STORY -->
+    <section id="canvas-story" class="relative border-b border-[#1c1c1c] bg-obsidian py-20 lg:py-28">
+      <div class="crosshair-corner top-4 left-4"></div>
+      <div class="crosshair-corner top-4 right-4"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left Column: Rotating Moiré Wireframe Torus/Sphere -->
+          <div class="lg:col-span-6 relative flex items-center justify-center min-h-[350px] sm:min-h-[440px]">
+            <div class="relative w-full max-w-[440px] aspect-square rounded-2xl border border-[#222] bg-[#090909] p-4 flex items-center justify-center overflow-hidden">
+              <canvas id="spirograph-canvas" class="w-full h-full"></canvas>
+              
+              <!-- Blueprint markers -->
+              <div class="absolute top-3 left-4 font-mono text-[10px] text-neutral-500 uppercase">
+                FIGUR 03 // TORUS SIKLOID 3D
+              </div>
+              <div class="absolute bottom-3 right-4 font-mono text-[10px] text-cyan-400 uppercase">
+                RAD: 360° // INTERSEKSI: BENAR
+              </div>
+              <div class="crosshair-corner top-2 left-2"></div>
+              <div class="crosshair-corner bottom-2 right-2"></div>
+            </div>
+          </div>
+
+          <!-- Right Column: Story Editorial Text -->
+          <div class="lg:col-span-6 flex flex-col justify-center">
+            <div class="inline-flex items-center gap-2 font-mono text-xs text-silver tracking-widest uppercase mb-4">
+              <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full"></span>
+              MATRIKS SINTESIS KREATIF & SAINS
+            </div>
+            
+            <h2 class="font-headline font-bold text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-white mb-8 leading-[0.95]">
+              NARASI ANDA,<br/>
+              <span class="text-cyan-400">KANVAS ARSITEKTUR</span> KAMI
+            </h2>
+
+            <div class="space-y-6 text-silver text-sm sm:text-base leading-relaxed font-sans max-w-lg">
+              <p>
+                Di Synapse Helios ID, aspirasi rekayasa dan riset Anda membentuk kanvas dari setiap algoritma yang kami rancang. 
+                Baik Anda seorang periset yang ingin menguji batas penalaran model o1/o3, rekayasawan sistem yang merancang klaster inferensi vLLM, ataupun organisasi yang bermigrasi menuju arsitektur agen otonom, kami menyediakan platform komprehensif.
+              </p>
+              <p class="text-neutral-400 text-xs sm:text-sm">
+                Dedikasi kami adalah perjalanan kolaborasi berkelanjutan, presisi generatif matematis, dan resonansi teknologi mutakhir berstandar global.
+              </p>
+            </div>
+
+            <!-- Technical Metadata Badges -->
+            <div class="grid grid-cols-3 gap-4 pt-10 mt-8 border-t border-[#1e1e1e] font-mono text-xs">
+              <div>
+                <div class="text-white text-base font-bold">100M+</div>
+                <div class="text-neutral-500 text-[10px] tracking-wider uppercase">Inferensi Diproses</div>
+              </div>
+              <div>
+                <div class="text-white text-base font-bold">0.04ms</div>
+                <div class="text-neutral-500 text-[10px] tracking-wider uppercase">Dispersi Atensi</div>
+              </div>
+              <div>
+                <div class="text-cyan-400 text-base font-bold">99.9%</div>
+                <div class="text-neutral-500 text-[10px] tracking-wider uppercase">Indeks Fidelitas</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: MODEL MASA DEPAN & DIGITAL LEGACY -->
+    <section id="model-masa-depan" class="relative border-b border-[#1c1c1c] bg-surface py-20 lg:py-28">
+      <div class="crosshair-corner top-4 left-4"></div>
+      <div class="crosshair-corner top-4 right-4"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        
+        <!-- Header row -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-[#1f1f1f]">
+          <div>
+            <span class="font-mono text-xs tracking-widest text-silver uppercase block mb-3">LAYANAN & INFRASTRUKTUR GENERATIF</span>
+            <h2 class="font-headline font-bold text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-white leading-[0.95]">
+              MEMBANGUN WARISAN<br/><span class="text-cyan-400">DIGITAL MASA DEPAN</span>
+            </h2>
+          </div>
+          <div class="mt-6 md:mt-0 font-mono text-xs text-neutral-400 max-w-xs text-right">
+            MODEL AKTIF: HELIOS-4 / SYNAPSE-PRO<br/>
+            <span class="text-white">STATUS: KELAS ENTERPRISE SIAP PAKAI</span>
+          </div>
+        </div>
+
+        <!-- Grid of Services & Cyber Sculptures -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          
+          <!-- Card 1: The Thinker with cybernetic cranial augmentations -->
+          <div class="relative border border-[#222] rounded-xl bg-black overflow-hidden flex flex-col justify-between group hover:border-cyan-400/60 transition-colors duration-300">
+            
+            <div class="p-6 sm:p-8 flex flex-col justify-between z-10">
+              <div class="flex items-center justify-between mb-6">
+                <!-- 4-square icon -->
+                <div class="grid grid-cols-2 gap-1 w-5 h-5">
+                  <div class="w-2 h-2 bg-cyan-400"></div>
+                  <div class="w-2 h-2 bg-neutral-600"></div>
+                  <div class="w-2 h-2 bg-neutral-600"></div>
+                  <div class="w-2 h-2 bg-white"></div>
+                </div>
+                <span class="font-mono text-[10px] text-neutral-500">[SLOT_MODEL_01]</span>
+              </div>
+
+              <h3 class="font-headline font-bold text-xl sm:text-2xl text-white mb-3 group-hover:text-cyan-300 transition-colors">
+                Orkestrasi Kognitif & Multi-Modal Streaming:
+              </h3>
+              <p class="text-silver text-xs sm:text-sm font-sans leading-relaxed max-w-sm">
+                Perluas jangkauan kecerdasan sistem Anda. Layanan orkestrasi multi-modal kami mengintegrasikan pemrosesan audio-ke-audio waktu-nyata, sintesis narasi video yang konsisten, dan pemahaman visi spasial untuk platform skala besar.
+              </p>
+            </div>
+
+            <!-- Statue Visual with Cybernetic Headset Overlay -->
+            <div class="relative h-[340px] sm:h-[400px] w-full overflow-hidden mt-2">
+              <img 
+                src="https://images.unsplash.com/photo-1544531585-9847b68c8c86?auto=format&fit=crop&w=1000&q=80" 
+                alt="Classical Thinker Statue AI" 
+                class="w-full h-full object-cover object-center grayscale contrast-150 brightness-75 group-hover:scale-105 transition-transform duration-700"
+                onerror="this.src='https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=80'"
+              />
+
+              <!-- Cybernetic Cranial Ring Overlay -->
+              <div class="absolute top-[28%] left-[45%] w-8 h-8 rounded-full border-2 border-cyan-400 bg-cyan-900/40 backdrop-blur-sm flex items-center justify-center shadow-[0_0_15px_rgba(0,243,255,0.6)]">
+                <div class="w-2.5 h-2.5 bg-white rounded-full animate-ping"></div>
+              </div>
+
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+            </div>
+
+            <div class="p-6 border-t border-[#1a1a1a] flex items-center justify-between font-mono text-xs bg-[#090909]">
+              <div class="flex items-center gap-1.5 text-neutral-500">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-neutral-700"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-neutral-700"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-neutral-700"></span>
+              </div>
+              <div class="text-[11px] text-cyan-400 font-mono">FIDELITAS: 99.98%</div>
+            </div>
+
+            <div class="crosshair-corner top-2 left-2"></div>
+            <div class="crosshair-corner bottom-2 right-2"></div>
+          </div>
+
+          <!-- Card 2: Classical Roman bust with glowing cyber halo visor -->
+          <div class="relative border border-[#222] rounded-xl bg-black overflow-hidden flex flex-col justify-between group hover:border-cyan-400/60 transition-colors duration-300">
+            
+            <div class="p-6 sm:p-8 flex flex-col justify-between z-10">
+              <div class="flex items-center justify-between mb-6">
+                <!-- 4-square icon -->
+                <div class="grid grid-cols-2 gap-1 w-5 h-5">
+                  <div class="w-2 h-2 bg-neutral-600"></div>
+                  <div class="w-2 h-2 bg-white"></div>
+                  <div class="w-2 h-2 bg-cyan-400"></div>
+                  <div class="w-2 h-2 bg-neutral-600"></div>
+                </div>
+                <span class="font-mono text-[10px] text-neutral-500">[SLOT_MODEL_02]</span>
+              </div>
+
+              <h3 class="font-headline font-bold text-xl sm:text-2xl text-white mb-3 group-hover:text-cyan-300 transition-colors">
+                Inferensi Kinerja Tinggi & Efisiensi Energi:
+              </h3>
+              <p class="text-silver text-xs sm:text-sm font-sans leading-relaxed max-w-sm">
+                Manfaatkan arsitektur Mixture-of-Experts (MoE) dan State Space Models (Mamba) untuk memangkas konsumsi komputasi hingga 70% pada pemrosesan konteks token panjang, menghadirkan throughput maksimal di level cloud maupun perangkat edge.
+              </p>
+            </div>
+
+            <!-- Statue Visual with Halo Ring Visor Overlay -->
+            <div class="relative h-[340px] sm:h-[400px] w-full overflow-hidden mt-2">
+              <img 
+                src="https://images.unsplash.com/photo-1568214379698-8aeb8c6c6ac8?auto=format&fit=crop&w=1000&q=80" 
+                alt="Classical Roman Statue with Cyber Visor" 
+                class="w-full h-full object-cover object-top grayscale contrast-150 brightness-75 group-hover:scale-105 transition-transform duration-700"
+                onerror="this.src='https://images.unsplash.com/photo-1544531585-9847b68c8c86?auto=format&fit=crop&w=1000&q=80'"
+              />
+
+              <!-- Glowing Cybernetic Halo Ring across forehead -->
+              <div class="absolute top-[24%] left-[34%] w-32 h-5 rounded-full border-2 border-cyan-400 bg-cyan-400/20 cyber-visor -rotate-6 shadow-[0_0_25px_rgba(0,243,255,0.9)] backdrop-blur-sm"></div>
+
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+            </div>
+
+            <div class="p-6 border-t border-[#1a1a1a] flex items-center justify-between font-mono text-xs bg-[#090909]">
+              <div class="flex items-center gap-1.5 text-neutral-500">
+                <span class="w-1.5 h-1.5 rounded-full bg-neutral-700"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-neutral-700"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-neutral-700"></span>
+              </div>
+              <div class="text-[11px] text-cyan-400 font-mono">THROUGHPUT: 3.8x EFISIENSI</div>
+            </div>
+
+            <div class="crosshair-corner top-2 left-2"></div>
+            <div class="crosshair-corner bottom-2 right-2"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative bg-obsidian border-t border-[#1c1c1c] py-16 px-4 sm:px-8">
+      <div class="crosshair-corner top-4 left-4"></div>
+      <div class="crosshair-corner top-4 right-4"></div>
+
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#1c1c1c]">
+          
+          <!-- Column 1: Monogram & Bio -->
+          <div class="md:col-span-5">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-8 h-8 border border-cyan-400/60 flex items-center justify-center font-display font-bold text-base text-cyan-400">
+                Σ
+              </div>
+              <span class="font-headline font-bold text-base tracking-widest uppercase text-white">SYNAPSE HELIOS ID</span>
+            </div>
+            <p class="text-neutral-500 text-xs font-mono max-w-sm leading-relaxed mb-6">
+              Merekreasi titik temu antara ekspresi klasik manusia dan jaringan saraf tiruan otonom generasi terdepan. Dibangun di atas arsitektur inti Gemini 3 Flash & Klaster Kognisi Indonesia.
+            </p>
+            <div class="inline-flex items-center gap-2 font-mono text-[11px] text-emerald-400">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              SELURUH NODE KOGNISI BEROPERASI NORMAL
+            </div>
+          </div>
+
+          <!-- Column 2: Architecture Navigation -->
+          <div class="md:col-span-3 font-mono text-xs space-y-2.5">
+            <div class="text-white font-bold tracking-wider uppercase mb-3">DIREKTORI SISTEM</div>
+            <div><a href="#hero" class="text-neutral-400 hover:text-cyan-400 transition-colors">01 // Inti Kognisi</a></div>
+            <div><a href="#taksonomi" class="text-neutral-400 hover:text-cyan-400 transition-colors">02 // Taksonomi AI</a></div>
+            <div><a href="#bahasa-komputasi" class="text-neutral-400 hover:text-cyan-400 transition-colors">03 // Bahasa Komputasi</a></div>
+            <div><a href="#terminal-section" class="text-neutral-400 hover:text-cyan-400 transition-colors">04 // Terminal Interaktif</a></div>
+            <div><a href="#synergy" class="text-neutral-400 hover:text-cyan-400 transition-colors">05 // Sinergi Abadi</a></div>
+            <div><a href="#model-masa-depan" class="text-neutral-400 hover:text-cyan-400 transition-colors">06 // Model Masa Depan</a></div>
+          </div>
+
+          <!-- Column 3: Newsletter & Telemetry -->
+          <div class="md:col-span-4">
+            <div class="text-white font-mono text-xs font-bold tracking-wider uppercase mb-3">TELEMETRI & DISPATCH RISET</div>
+            <p class="text-neutral-500 text-xs font-mono mb-4">
+              Dapatkan publikasi riset arsitektur AI, analisis kernel GPU, dan perkembangan AGI langsung ke terminal email Anda.
+            </p>
+            <form onsubmit="handleNewsletter(event)" class="flex gap-2">
+              <input 
+                type="email" 
+                required 
+                placeholder="nama@organisasi.id" 
+                class="flex-1 bg-[#111] border border-[#282828] rounded-lg px-3 py-2 text-xs font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-cyan-400"
+              />
+              <button type="submit" class="px-4 py-2 bg-cyan-400 text-black font-mono text-xs font-bold rounded-lg hover:bg-cyan-300 transition-colors">
+                GABUNG
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Subfooter -->
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between font-mono text-[11px] text-neutral-600 gap-4">
+          <div>© 2026 SYNAPSE HELIOS INDONESIA. SELURUH HAK CIPTA DILINDUNGI.</div>
+          <div class="flex items-center gap-6">
+            <span>SISTEM_GRID: 12_KOLOM_ORTO</span>
+            <span>RILIS: 2026.10.4_PROD</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- DETAIL TAXONOMY MODAL / DRAWER -->
+  <div id="taxonomy-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 hidden">
+    <div class="bg-[#0c0c0c] border border-neutral-700 rounded-2xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative">
+      <div class="crosshair-corner top-3 left-3"></div>
+      <div class="crosshair-corner top-3 right-3"></div>
+      
+      <!-- Modal Header -->
+      <div class="px-6 py-4 bg-[#141414] border-b border-neutral-800 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span id="modal-badge" class="px-2.5 py-0.5 rounded-full border border-cyan-400 bg-cyan-950/60 text-cyan-300 font-mono text-[10px] font-bold">
+            SOTA
+          </span>
+          <h3 id="modal-title" class="font-headline font-bold text-lg sm:text-xl text-white">
+            Detail Arsitektur
+          </h3>
+        </div>
+        <button onclick="closeDetailModal()" class="w-8 h-8 rounded-full border border-neutral-700 hover:border-white text-silver hover:text-white flex items-center justify-center font-mono text-sm transition-colors">
+          ✕
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div id="modal-body" class="p-6 overflow-y-auto space-y-6">
+        <!-- Injected via interactive-matrix.js -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-3 bg-[#111] border-t border-neutral-800 flex justify-between items-center font-mono text-xs text-neutral-500">
+        <span>KLASIFIKASI KOGNISI ID</span>
+        <button onclick="closeDetailModal()" class="px-4 py-1.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-white font-mono text-xs transition-colors">
+          Tutup Panel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CODE SNIPPET MODAL -->
+  <div id="code-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 hidden">
+    <div class="bg-[#0c0c0c] border border-neutral-700 rounded-2xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative">
+      <div class="crosshair-corner top-3 left-3"></div>
+      <div class="crosshair-corner top-3 right-3"></div>
+      
+      <!-- Modal Header -->
+      <div class="px-6 py-4 bg-[#141414] border-b border-neutral-800 flex items-center justify-between">
+        <h3 id="code-modal-title" class="font-headline font-bold text-base sm:text-lg text-white">
+          Contoh Kode Komputasi AI
+        </h3>
+        <button onclick="closeCodeModal()" class="w-8 h-8 rounded-full border border-neutral-700 hover:border-white text-silver hover:text-white flex items-center justify-center font-mono text-sm transition-colors">
+          ✕
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div id="code-modal-body" class="p-6 overflow-y-auto">
+        <!-- Injected via interactive-matrix.js -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-3 bg-[#111] border-t border-neutral-800 flex justify-end">
+        <button onclick="closeCodeModal()" class="px-4 py-1.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-white font-mono text-xs transition-colors">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Notification Toast Container -->
+  <div id="toast-box" class="fixed bottom-6 right-6 z-50 transition-all duration-300 opacity-0 pointer-events-none translate-y-3">
+    <div class="bg-[#181818] border border-cyan-400/40 text-white font-mono text-xs px-4 py-3 rounded-lg shadow-2xl flex items-center gap-3">
+      <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+      <span id="toast-message">Pesan notifikasi sistem</span>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="/static/js/canvas-rayburst.js"></script>
+  <script src="/static/js/canvas-moire.js"></script>
+  <script src="/static/js/canvas-spirograph.js"></script>
+  <script src="/static/js/interactive-matrix.js"></script>
+  <script src="/static/js/terminal-client.js"></script>
+
+  <script>
+    // Live Clock updater
+    function updateClock() {
+      const now = new Date();
+      const timeString = now.toTimeString().split(' ')[0] + ' WIB';
+      const clockEl = document.getElementById('live-time');
+      if (clockEl) clockEl.innerText = timeString;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    function handleNewsletter(e) {
+      e.preventDefault();
+      showToast("Transmisi terdaftar. Saluran telemetri riset berhasil dibuka.");
+      e.target.reset();
+    }
+
+    window.onload = function() {
+      initRayburstCanvas();
+      initMoireArcCanvas();
+      initSpirographCanvas();
+    };
+  </script>
+</body>
+</html>

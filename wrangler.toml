@@ -1,0 +1,7 @@
+name = "synapse-helios-id"
+compatibility_date = "2026-10-04"
+pages_build_output_dir = "static"
+
+[vars]
+ENVIRONMENT = "production"
+CLUSTER = "KLUSTER_KOGNISI_INDONESIA"
